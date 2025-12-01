@@ -7,5 +7,7 @@ class Perfils extends Table {
   TextColumn get hobbies => text().nullable()();
   TextColumn get habitos => text().nullable()();
   TextColumn get metas => text().nullable()();
-  DateTimeColumn get fechaActualizacion => dateTime().withDefault(currentDateAndTime)();
+  DateTimeColumn get fechaActualizacion =>
+      dateTime().withDefault(currentDateAndTime)();
 }
+

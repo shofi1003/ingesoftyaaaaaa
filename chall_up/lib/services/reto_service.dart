@@ -1,6 +1,7 @@
 import '../data/daos/perfil_dao.dart';
 import '../data/daos/reto_dao.dart';
 import '../data/database.dart';
+import '../data/tables/perfil.dart';
 
 /// Contiene la lógica de negocio para generar retos diarios y por inactividad.
 class RetoService {

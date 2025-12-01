@@ -1,5 +1,7 @@
 import '../data/daos/perfil_dao.dart';
 import '../data/database.dart';
+import '../data/tables/historial_perfil.dart';
+import '../data/tables/perfil.dart';
 
 /// Coordina la lógica de perfil a partir de los cuestionarios y cambios de hobbies.
 class PerfilService {

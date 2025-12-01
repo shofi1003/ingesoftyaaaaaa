@@ -1,8 +1,11 @@
 import 'package:chall_up/data/daos/perfil_dao.dart';
 import 'package:chall_up/data/daos/reto_dao.dart';
 import 'package:chall_up/data/database.dart';
+import 'package:chall_up/data/tables/historial_perfil.dart';
+import 'package:chall_up/data/tables/usuario.dart';
 import 'package:chall_up/services/perfil_service.dart';
 import 'package:chall_up/services/reto_service.dart';
+import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -8,4 +8,4 @@ class Usuarios extends Table {
   TextColumn get password => text().withLength(min: 1, max: 255)();
   TextColumn get googleId => text().nullable().withLength(min: 0, max: 150)();
   DateTimeColumn get fechaRegistro => dateTime().withDefault(currentDateAndTime)();
-} 
+}

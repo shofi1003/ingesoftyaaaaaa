@@ -14,6 +14,10 @@ class ChallUpApp extends StatelessWidget {
     return MaterialApp(
       title: 'ChallUp',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.deepPurple,
+      ),
       initialRoute: '/login',
       routes: {
         '/login': (_) => const LoginScreen(),

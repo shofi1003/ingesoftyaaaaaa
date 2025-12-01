@@ -20,7 +20,10 @@
   import 'tables/puntuacion.dart';
   import 'tables/ranking.dart';
   import 'tables/notificacion.dart';
+  import 'tables/reto_diario_detalle.dart';
   import 'daos/usuario_dao.dart';
+  import 'daos/perfil_dao.dart';
+  import 'daos/reto_dao.dart';
 
   part 'database.g.dart';
 
@@ -42,9 +45,12 @@
     Puntuacions,
     Rankings,
     Notificacions,
+    RetoDiarioDetalles,
   ],
   daos: [
     UsuarioDao,
+    PerfilDao,
+    RetoDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -56,7 +62,17 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTest(QueryExecutor executor) : super(executor);
   
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+        onCreate: (m) => m.createAll(),
+        onUpgrade: (m, from, to) async {
+          if (from < 2) {
+            await m.createTable(retoDiarioDetalles);
+          }
+        },
+      );
 }
 
 LazyDatabase _openConnection() {

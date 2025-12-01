@@ -3,7 +3,7 @@ import '../../data/daos/usuario_dao.dart';
 import '../../data/database.dart';
 import 'lista_usuarios_screen.dart';
 import 'perfil_screen.dart';
-import 'cuestionario_inicial_screen.dart'; 
+import 'cuestionario_inicial_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final Usuario usuarioLogueado;
@@ -65,11 +65,28 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const CuestionarioInicialScreen(),
+                    builder: (_) => CuestionarioInicialScreen(
+                      usuario: usuarioLogueado,
+                    ),
                   ),
                 );
               },
               child: const Text("Completar cuestionario inicial"),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => PerfilScreen(
+                      usuario: usuarioLogueado,
+                      usuarioDao: usuarioDao,
+                    ),
+                  ),
+                );
+              },
+              child: const Text('Mi perfil y reto diario'),
             ),
           ],
         ),

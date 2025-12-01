@@ -160,7 +160,7 @@ class RetoDao extends DatabaseAccessor<AppDatabase> with _$RetoDaoMixin {
     int usuarioId,
   ) async {
     final descripcion =
-        'Han pasado varios días sin actualizar tus hobbies. ' 'Prueba esta actividad rápida: organiza 15 minutos para retomar tu hobby favorito y compartir un avance.';
+        'Han pasado varios días sin actualizar tus hobbies. Prueba esta actividad rápida: organiza 15 minutos para retomar tu hobby favorito y compartir un avance.';
 
     final reto = await guardarRetoGenerado(
       usuarioId: usuarioId,
